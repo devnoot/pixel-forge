@@ -1,5 +1,5 @@
 {
-  "name": "nootstack",
+  "name": "sprite-studio",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.32.0",
+    "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.376.0",
     "react": "^18.2.0",

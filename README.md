@@ -1,22 +1,5 @@
-# nootstack 
+# Sprite Studio
 
-My frontend web app stack 
+This is a small web app that generates Arduino code for addressable LED matrices. To use, draw using the sprite editor, then copy the generated code into Arduino IDE. You may have to edit some of the `#define` variables at the top of the generated code to match your hardware.
 
-**The stack**
-
-- react
-- react-query 
-- react-router
-- react-hook-form
-- lucide-icons
-- tailwindcss 
-
-**The dev tools**
-
-- vite
-- prettier
-- typescript
-
-## Other stuff
-
-- `@` is path aliased to the `app` folder
+![alt text](image.png)

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { Home } from '../pages/home.tsx'
-import { Layout } from './layout.tsx'
+import { Home } from '@/pages/home/home.tsx'
+import { Layout } from '@/components/layout.tsx'
 
 export const router = createBrowserRouter([
   {
