@@ -5,11 +5,11 @@ import { Layout } from '@/components/layout.tsx'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/pixel-forge/',
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: '/pixel-forge/',
         element: <Home />
       }
     ]
