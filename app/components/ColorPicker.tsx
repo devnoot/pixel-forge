@@ -2,14 +2,14 @@ import { useRef } from 'react'
 
 export const ColorPicker = () => {
 
-  const dialogRef = useRef(null)
+  const dialogRef = useRef<HTMLDialogElement>(null)
 
   const openDialog = () => {
-    dialogRef.current.showModal()
+    dialogRef.current?.showModal()
   }
 
   const closeDialog = () => {
-    dialogRef.current.close()
+    dialogRef.current?.close()
   }
 
   return (

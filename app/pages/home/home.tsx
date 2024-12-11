@@ -8,7 +8,7 @@ import {
 import { Color, Palette } from '@/index'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
-import { useLocalStorage } from "@uidotdev/usehooks";
+// import { useLocalStorage } from "@uidotdev/usehooks";
 import { PageTitle } from './PageTitle'
 
 const DEFAULT_PADDING_CLASS = 'p-3'
@@ -28,10 +28,10 @@ const defaultPalette: Palette = {
 }
 
 export const Home = () => {
-  const [palettes, setPalettes] = useState<Set<Palette>>(
+  const [palettes] = useState<Set<Palette>>(
     new Set([defaultPalette])
   )
-  const [selectedPalette, setSelectedPalette] =
+  const [selectedPalette] =
     useState<Palette>(defaultPalette)
   const [matrixWidth, setMatrixWidth] = useState<number>(DEFAULT_MATRIX_WIDTH)
   const [matrixHeight, setMatrixHeight] = useState<number>(
@@ -39,7 +39,7 @@ export const Home = () => {
   )
   const [matrixData, setMatrixData] = useState<(Color | null)[]>([])
   const [selectedColorIndex, setSelectedColorIndex] = useState(0)
-  const [drawing, setDrawing] = useLocalStorage('drawing', null);
+  // const [] = useLocalStorage('drawing', null);
 
   console.info(matrixData)
 
@@ -166,7 +166,7 @@ export const Home = () => {
       `};`,
       '',
       `CRGB leds[NUM_LEDS] = {`,
-      `${matrixData.map((color, i) => (color ? `  colorMap[${selectedPalette.colors.indexOf(color)}]` : `  CRGB::Black`)).join(',')}`,
+      `${matrixData.map((color) => (color ? `  colorMap[${selectedPalette.colors.indexOf(color)}]` : `  CRGB::Black`)).join(',')}`,
       `};`,
       '',
       'void reorderArray(CRGB* leds, int width, int height) {',
@@ -224,14 +224,14 @@ export const Home = () => {
             fieldName='Matrix Width'
             inputProps={{
               value: matrixWidth,
-              onChange: (e) => setMatrixWidth(Number(e.target.value))
+              onChange: (e: React.ChangeEvent<HTMLInputElement>) => setMatrixWidth(Number(e.target.value))
             }}
           />
           <InputField
             fieldName='Matrix Height'
             inputProps={{
               value: matrixHeight,
-              onChange: (e) => setMatrixHeight(Number(e.target.value))
+              onChange: (e: React.ChangeEvent<HTMLInputElement>) => setMatrixHeight(Number(e.target.value))
             }}
           />
           <button onClick={saveCurrentDrawing}>Save for later</button>

@@ -1,6 +1,11 @@
 import { cn } from '@/lib/utils'
 
-export const InputField = ({ fieldName, inputProps }) => {
+interface InputFieldProps {
+  fieldName: string;
+  inputProps: React.InputHTMLAttributes<HTMLInputElement>;
+}
+
+export const InputField = ({ fieldName, inputProps }: InputFieldProps) => {
   const id = crypto.randomUUID()
   return (
     <div className={cn(['flex', 'flex-col', 'space-y-3'])}>
